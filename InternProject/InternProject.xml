@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InternProject</name>
+    </assembly>
+    <members>
+        <member name="T:InternProject.IAnalyzer">
+            <summary>
+            Интерфейс анализа строк
+            </summary>
+        </member>
+        <member name="M:InternProject.IAnalyzer.Analyze(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Анализ перечисления строк
+            </summary>
+            <param name="strings">Перечисление строк</param>
+            <returns>Словарь строк и их количества упоминаний</returns>
+        </member>
+        <member name="T:InternProject.IDownloader">
+            <summary>
+            Интерфейс загрузчика
+            </summary>
+        </member>
+        <member name="M:InternProject.IDownloader.DownloadPage(System.String,System.String)">
+            <summary>
+            Загрузка страницы
+            </summary>
+            <param name="url">Ссылка на страницу сайта</param>
+            <param name="path">Путь сохранения файла</param>
+            <returns>Успешно ли завершена загрузка</returns>
+        </member>
+        <member name="T:InternProject.IParser">
+            <summary>
+            Интерфейс парсера
+            </summary>
+        </member>
+        <member name="M:InternProject.IParser.Parse(System.IO.Stream)">
+            <summary>
+            Парсинг потока данных
+            </summary>
+            <param name="stream">Поток данных</param>
+            <returns>Перечисление строк</returns>
+        </member>
+        <member name="T:InternProject.IPrinter">
+            <summary>
+            Интерфейс вывода строк
+            </summary>
+        </member>
+        <member name="M:InternProject.IPrinter.Print(System.Collections.Generic.IDictionary{System.String,System.Int32})">
+            <summary>
+            Вывод строк и статистики их упоминаний
+            </summary>
+            <param name="strings">Строки и их упоминания</param>
+        </member>
+    </members>
+</doc>

@@ -6,7 +6,15 @@ namespace InternProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("World!");
+            if (args == null || args.Length != 1)
+            {
+                throw new Exception("Неверное количество аргументов");
+            }
+            
+            if (string.IsNullOrEmpty(args[0]))
+            {
+                throw new Exception("Неверный формат строки");
+            }
         }
     }
 }
