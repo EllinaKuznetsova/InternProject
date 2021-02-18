@@ -61,8 +61,8 @@ namespace InternProject
                 }
 
                 string firstWord = splittedStrings[0];
-                bool firstWordHasDelimiter = !CheckChar(str[0]); ;
-                bool currentLastWordHasDelimiter = !CheckChar(str[str.Length - 1]);
+                bool firstWordHasDelimiter = CharIsDelimiter(str[0]);
+                bool currentLastWordHasDelimiter = CharIsDelimiter(str[str.Length - 1]);
 
                 if (currentIteration > 1)
                 {
@@ -115,10 +115,10 @@ namespace InternProject
         /// Является ли символ нормальным или разделителем
         /// </summary>
         /// <param name="ch">Символ</param>
-        /// <returns>true - нормальный символ, false - разделитель</returns>
-        bool CheckChar(char ch)
+        /// <returns>true - разделитель, false - нормальный символ</returns>
+        bool CharIsDelimiter(char ch)
         {
-            return !separatingChars.Contains(ch);
+            return separatingChars.Contains(ch);
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace InternProject
         /// <returns>Является ли строка разделителем</returns>
         bool StringIsDelimiter(string text)
         {
-            return text.Any(x => !CheckChar(x));
+            return text.Any(x => CharIsDelimiter(x));
         }
     }
 }

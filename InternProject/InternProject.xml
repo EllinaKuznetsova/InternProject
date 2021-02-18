@@ -77,12 +77,12 @@
             <param name="stream">Поток данных</param>
             <returns>Перечисление строк</returns>
         </member>
-        <member name="M:InternProject.Parser.CheckChar(System.Char)">
+        <member name="M:InternProject.Parser.CharIsDelimiter(System.Char)">
             <summary>
             Является ли символ нормальным или разделителем
             </summary>
             <param name="ch">Символ</param>
-            <returns>true - нормальный символ, false - разделитель</returns>
+            <returns>true - разделитель, false - нормальный символ</returns>
         </member>
         <member name="M:InternProject.Parser.SplitByDelimiters(System.String)">
             <summary>
