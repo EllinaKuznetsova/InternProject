@@ -4,6 +4,19 @@
         <name>InternProject</name>
     </assembly>
     <members>
+        <member name="T:InternProject.Downloader">
+            <summary>
+            Загрузчик
+            </summary>
+        </member>
+        <member name="M:InternProject.Downloader.DownloadPage(System.String,System.String)">
+            <summary>
+            Загрузка страницы
+            </summary>
+            <param name="url">Ссылка на страницу сайта</param>
+            <param name="path">Путь сохранения файла</param>
+            <returns>Успешно ли завершена загрузка</returns>
+        </member>
         <member name="T:InternProject.IAnalyzer">
             <summary>
             Интерфейс анализа строк
@@ -51,6 +64,39 @@
             Вывод строк и статистики их упоминаний
             </summary>
             <param name="strings">Строки и их упоминания</param>
+        </member>
+        <member name="T:InternProject.Parser">
+            <summary>
+            Парсер
+            </summary>
+        </member>
+        <member name="M:InternProject.Parser.Parse(System.IO.Stream)">
+            <summary>
+            Парсинг потока данных
+            </summary>
+            <param name="stream">Поток данных</param>
+            <returns>Перечисление строк</returns>
+        </member>
+        <member name="M:InternProject.Parser.CheckChar(System.Char)">
+            <summary>
+            Является ли символ нормальным или разделителем
+            </summary>
+            <param name="ch">Символ</param>
+            <returns>true - нормальный символ, false - разделитель</returns>
+        </member>
+        <member name="M:InternProject.Parser.SplitByDelimiters(System.String)">
+            <summary>
+            Разделение строки с помощью разделителей
+            </summary>
+            <param name="text">Строка</param>
+            <returns>Массив строк</returns>
+        </member>
+        <member name="M:InternProject.Parser.StringIsDelimiter(System.String)">
+            <summary>
+            Строка состоит только из разделителей
+            </summary>
+            <param name="text">Строка</param>
+            <returns>Является ли строка разделителем</returns>
         </member>
     </members>
 </doc>

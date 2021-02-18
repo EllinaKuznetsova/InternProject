@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 
 namespace InternProject
 {
@@ -17,11 +19,14 @@ namespace InternProject
             }
 
             IDownloader downloader = new Downloader();
+
             string name = "downloadedFile.txt";
 
             if (downloader.DownloadPage(args[0], name))
             {
-                //smth
+                IParser parser = new Parser();
+                string path = Path.GetFullPath(name);
+                var words = parser.Parse(File.Open(path, FileMode.Open));
             }
         }
     }
