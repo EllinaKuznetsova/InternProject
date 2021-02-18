@@ -26,10 +26,13 @@ namespace InternProject
             {
                 IParser parser = new Parser();
                 var analyzer = new Analyzer();
+                var printer = new Printer();
 
                 string path = Path.GetFullPath(name);
                 var words = parser.Parse(File.Open(path, FileMode.Open));
                 var wordsWithCounters = analyzer.Analyze(words);
+
+                printer.Print(wordsWithCounters);
             }
         }
     }
