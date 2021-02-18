@@ -25,7 +25,12 @@ namespace InternProject
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Страница не скачана {ex.Message}");
+                string mess = $"Страница не скачана {ex.Message}";
+
+                Logger.Instance.Log(mess);
+                Logger.Instance.Log(ex.StackTrace);
+
+                Console.WriteLine(mess);
                 return false;
             }
             

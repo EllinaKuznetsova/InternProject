@@ -20,6 +20,11 @@ namespace InternProject
         /// <returns>Перечисление строк</returns>
         public IEnumerable<string> Parse(Stream stream)
         {
+            if (stream is null)
+            {
+                throw new ArgumentNullException($"Аргумент {nameof(stream)} равен null");
+            }
+
             long fileLength = stream.Length;
             long bytesReaded = 0;
 
@@ -44,7 +49,6 @@ namespace InternProject
 
                 bytesReaded += n;
 
-                //строка = юникод(если н = размеру буфера то раскодируется буфер либо берётся кол-во в буфере которое было занято
                 string str = Encoding.UTF8.GetString(n == bufferSize ? buffer : buffer.Take(n).ToArray());
 
                 var splittedStrings = SplitByDelimiters(str);
@@ -128,6 +132,11 @@ namespace InternProject
         /// <returns>Массив строк</returns>
         string[] SplitByDelimiters(string text)
         {
+            if (text is null)
+            {
+                throw new ArgumentNullException($"Аргумент {nameof(text)} равен null");
+            }
+
             return text.Split(separatingChars, StringSplitOptions.RemoveEmptyEntries);
         }
 
@@ -138,6 +147,11 @@ namespace InternProject
         /// <returns>Является ли строка разделителем</returns>
         bool StringIsDelimiter(string text)
         {
+            if (text is null)
+            {
+                throw new ArgumentNullException($"Аргумент {nameof(text)} равен null");
+            }
+
             return text.Any(x => CharIsDelimiter(x));
         }
     }

@@ -54,6 +54,17 @@
             <param name="path">Путь сохранения файла</param>
             <returns>Успешно ли завершена загрузка</returns>
         </member>
+        <member name="T:InternProject.ILogger">
+            <summary>
+            Интерфейс логгера
+            </summary>
+        </member>
+        <member name="M:InternProject.ILogger.Log(System.String)">
+            <summary>
+            Запись в лог
+            </summary>
+            <param name="message">Сообщение</param>
+        </member>
         <member name="T:InternProject.IParser">
             <summary>
             Интерфейс парсера
@@ -76,6 +87,22 @@
             Вывод строк и статистики их упоминаний
             </summary>
             <param name="strings">Строки и их упоминания</param>
+        </member>
+        <member name="T:InternProject.Logger">
+            <summary>
+            Логгер
+            </summary>
+        </member>
+        <member name="P:InternProject.Logger.Instance">
+            <summary>
+            Экземпляр логгера
+            </summary>
+        </member>
+        <member name="M:InternProject.Logger.Log(System.String)">
+            <summary>
+            Вывод в лог
+            </summary>
+            <param name="message">Сообщение</param>
         </member>
         <member name="T:InternProject.Parser">
             <summary>
@@ -109,6 +136,17 @@
             </summary>
             <param name="text">Строка</param>
             <returns>Является ли строка разделителем</returns>
+        </member>
+        <member name="T:InternProject.Printer">
+            <summary>
+            Интерфейс вывода строк
+            </summary>
+        </member>
+        <member name="M:InternProject.Printer.Print(System.Collections.Generic.IDictionary{System.String,System.Int32})">
+            <summary>
+            Вывод строк и статистики их упоминаний
+            </summary>
+            <param name="strings">Строки и их упоминания</param>
         </member>
     </members>
 </doc>

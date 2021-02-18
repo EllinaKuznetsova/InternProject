@@ -22,17 +22,26 @@ namespace InternProject
 
             string name = "downloadedFile.txt";
 
-            if (downloader.DownloadPage(args[0], name))
+            try
             {
-                IParser parser = new Parser();
-                var analyzer = new Analyzer();
-                var printer = new Printer();
+                if (downloader.DownloadPage(args[0], name))
+                {
+                    IParser parser = new Parser();
+                    var analyzer = new Analyzer();
+                    var printer = new Printer();
 
-                string path = Path.GetFullPath(name);
-                var words = parser.Parse(File.Open(path, FileMode.Open));
-                var wordsWithCounters = analyzer.Analyze(words);
+                    string path = Path.GetFullPath(name);
+                    var words = parser.Parse(File.Open(path, FileMode.Open));
+                    var wordsWithCounters = analyzer.Analyze(words);
 
-                printer.Print(wordsWithCounters);
+                    printer.Print(wordsWithCounters);
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Instance.Log(e.Message);
+                Logger.Instance.Log(e.StackTrace);
+                throw;
             }
         }
     }

@@ -15,6 +15,13 @@ namespace InternProject
 		/// <returns>Словарь строк и их количества упоминаний</returns>
 		public IDictionary<string, int> Analyze(IEnumerable<string> strings)
 		{
+			if (strings is null)
+			{
+				string mess = $"Аргумент {nameof(strings)} равен null";
+				Logger.Instance.Log(mess);
+				throw new ArgumentNullException(mess);
+			}
+
 			var dict = new Dictionary<string, int>();
 
 			foreach (var word in strings)
