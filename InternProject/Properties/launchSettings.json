@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "InternProject": {
+      "commandName": "Project",
+      "commandLineArgs": "https://www.etymonline.com/"
+    }
+  }
+}
