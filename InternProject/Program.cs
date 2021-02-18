@@ -25,8 +25,11 @@ namespace InternProject
             if (downloader.DownloadPage(args[0], name))
             {
                 IParser parser = new Parser();
+                var analyzer = new Analyzer();
+
                 string path = Path.GetFullPath(name);
                 var words = parser.Parse(File.Open(path, FileMode.Open));
+                var wordsWithCounters = analyzer.Analyze(words);
             }
         }
     }

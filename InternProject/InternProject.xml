@@ -4,6 +4,18 @@
         <name>InternProject</name>
     </assembly>
     <members>
+        <member name="T:InternProject.Analyzer">
+            <summary>
+            Анализ строк
+            </summary>
+        </member>
+        <member name="M:InternProject.Analyzer.Analyze(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Анализ перечисления строк
+            </summary>
+            <param name="strings">Перечисление строк</param>
+            <returns>Словарь строк и их количества упоминаний</returns>
+        </member>
         <member name="T:InternProject.Downloader">
             <summary>
             Загрузчик
